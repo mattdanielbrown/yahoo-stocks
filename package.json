@@ -1,59 +1,64 @@
 {
-    "name": "yahoo-stocks",
-    "version": "2.0.5",
-    "description": "Fetch stock data from Yahoo! Finance",
-    "main": "dist/index.js",
-    "module": "dist/index.m.js",
-    "source": "index.js",
-    "devDependencies": {
-        "babel-core": "^6.26.3",
-        "babel-jest": "^24.1.0",
-        "babel-plugin-transform-object-rest-spread": "^6.26.0",
-        "babel-preset-env": "^1.7.0",
-        "coveralls": "^3.0.2",
-        "husky": "^1.3.1",
-        "jest": "^24.1.0",
-        "lint-staged": "^8.1.3",
-        "microbundle": "^0.9.0",
-        "prettier": "^1.16.4"
-    },
-    "scripts": {
-        "build": "microbundle",
-        "dev": "microbundle watch",
-        "fmt": "prettier --write {index.js,README.md}",
-        "precommit": "lint-staged",
-        "test": "jest --coverage",
-        "prepublish": "npm run build"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/vutran/yahoo-stocks.git"
-    },
-    "keywords": [
-        "yahoo",
-        "finance",
-        "stocks",
-        "trade",
-        "scraper"
-    ],
-    "author": "Vu Tran <vu@vu-tran.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/vutran/yahoo-stocks/issues"
-    },
-    "homepage": "https://github.com/vutran/yahoo-stocks#readme",
-    "lint-staged": {
-        "{index.js,README.md}": [
-            "prettier --write",
-            "git add"
-        ]
-    },
-    "files": [
-        "dist",
-        "LICENSE",
-        "README.md"
-    ],
-    "jest": {
-        "testURL": "http://localhost/"
-    }
+  "name": "yahoo-stocks",
+  "version": "2.0.5",
+  "description": "Fetch stock data from Yahoo! Finance",
+  "main": "dist/index.js",
+  "module": "dist/index.m.js",
+  "source": "index.js",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.1.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "coveralls": "^3.0.2",
+    "husky": "^1.3.1",
+    "jest": "^24.1.0",
+    "lint-staged": "^9.0.0",
+    "microbundle": "^0.12.0",
+    "prettier": "^1.16.4"
+  },
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "fmt": "prettier --write {index.js,README.md}",
+    "precommit": "lint-staged",
+    "test": "jest --coverage",
+    "prepublish": "npm run snyk-protect && npm run build",
+    "snyk-protect": "snyk protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vutran/yahoo-stocks.git"
+  },
+  "keywords": [
+    "yahoo",
+    "finance",
+    "stocks",
+    "trade",
+    "scraper"
+  ],
+  "author": "Vu Tran <vu@vu-tran.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vutran/yahoo-stocks/issues"
+  },
+  "homepage": "https://github.com/vutran/yahoo-stocks#readme",
+  "lint-staged": {
+    "{index.js,README.md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "jest": {
+    "testURL": "http://localhost/"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.434.2"
+  }
 }
